@@ -1,9 +1,9 @@
-//0-f ¸ß´Î·½ÇóÄ£YIWEN
+//0-f é«˜æ¬¡æ–¹æ±‚æ¨¡YIWEN
 
 /*
-¶ÔÓÚn^p mod m,µ±pµÄÖµºÜ´óÊ±Ö±½ÓÇó½âÊÇ²»¿ÉÄÜµÄ£¬¿ÉÒÔ²ÉÓÃ¶þ·Ö·¨²ð·Ö
-n^p=n^(p/2)*n^(p/2),È»ºóÔÙ¶þ·Ön^(p/2),Ö±µ½pµÈÓÚ1ÎªÖ¹£¬¶þ·ÖµÄ¹ý³ÌÖÐ¶ÔmÇóÄ£
-ÓÐÊ½×Ó£ºN mod m=[N1 mod m*N2 mod m*N3 mod m¡¤¡¤¡¤Nn mod m] mod m
+å¯¹äºŽn^p mod m,å½“pçš„å€¼å¾ˆå¤§æ—¶ç›´æŽ¥æ±‚è§£æ˜¯ä¸å¯èƒ½çš„ï¼Œå¯ä»¥é‡‡ç”¨äºŒåˆ†æ³•æ‹†åˆ†
+n^p=n^(p/2)*n^(p/2),ç„¶åŽå†äºŒåˆ†n^(p/2),ç›´åˆ°pç­‰äºŽ1ä¸ºæ­¢ï¼ŒäºŒåˆ†çš„è¿‡ç¨‹ä¸­å¯¹mæ±‚æ¨¡
+æœ‰å¼å­ï¼šN mod m=[N1 mod m*N2 mod m*N3 mod mÂ·Â·Â·Nn mod m] mod m
 */
 
 
@@ -13,10 +13,10 @@ int PowMod(int n,int p);
 int main(void)
 {
     int n,pow;
-    printf("µ×Êý ÃÝ M : ");
+    printf("åº•æ•° å¹‚ M : ");
     scanf("%d %d %d",&n,&pow,&M);
     PowMod(n,pow);
-    printf("ÇóµÃÄ£Îª£º%d\n",PowMod(n,pow));
+    printf("æ±‚å¾—æ¨¡ä¸ºï¼š%d\n",PowMod(n,pow));
     return 0;
 }
 
@@ -26,9 +26,9 @@ int PowMod(int n, int p)
 	int result=1;
 	while(p>0)
 	{
-		if(p%2==1)   /*ÃÝÎªÆæÊý*/
-			result=(result*n)%M;
-        p=p/2;
+		if(p%2==1)   /*å¹‚ä¸ºå¥‡æ•°*/
+		   result=(result*n)%M;
+                p=p/2;
 		n=(n*n)%M;
 	}
 	return result;
