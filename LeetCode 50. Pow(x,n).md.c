@@ -1,3 +1,4 @@
+#计算x的n次方
 class Solution {
 public:
     double quickMul(double x, long long N) {
