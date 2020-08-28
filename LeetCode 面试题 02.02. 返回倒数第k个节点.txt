@@ -1,0 +1,16 @@
+/*实现一种算法,找出单向链表中倒数第k个节点,返回该节点的值*/
+//先将t向前移动k步,之后head与t同时后移,当t移到最后时,head为目标值
+
+int kthTolast(struct ListNode* head,int k)
+{
+    struct ListNode* t=head;
+    while(k>0){
+        t=t->next;
+        k--;
+    }
+    while(t!=0){
+        t=t->next;
+        head=head->next;
+    }
+    return head->val;
+}
