@@ -1,0 +1,28 @@
+/*
+在经典汉诺塔问题中,有3根柱子及N个不同大小的穿孔圆盘,盘子可以滑入任意一根柱子,一开始,所有盘子自上而下按升序依次套在第一根柱子上(即每一个盘子只能放在更大的盘子上面),移动圆盘时受到以下限制:
+(1) 每次只能移动一个盘子;
+(2) 盘子只能从柱子顶端滑出移到下一根柱子;
+(3) 盘子只能叠在比它大的盘子上。
+请编写程序,用栈将所有盘子从第一根柱子移到最后一根柱子,你需要原地修改栈。
+题目链接：https://leetcode-cn.com/problems/hanota-lcci
+*/
+
+//链接：https://leetcode-cn.com/problems/hanota-lcci/solution/mian-shi-ti-0806-jiang-di-gui-jin-xing-dao-di-yi-n/
+
+
+//hanoi(n,x,y,z)表示将x柱上的n个盘借助y柱移动到z柱上，多个盘移动时将除最下面的盘外所有盘视为一个整体
+
+
+class Solution:
+    def hanota(self, A: List[int], B: List[int], C: List[int]) -> None:
+
+        def hanoi(n,x,y,z):
+            if n == 1:
+                z.append(x.pop())
+                return
+            else:
+                hanoi(n-1,x,z,y)
+                hanoi(1,x,y,z)
+                hanoi(n-1,y,x,z)
+
+        hanoi(len(A),A,B,C)
